@@ -1,0 +1,4 @@
+alias ls="ls -lrth"
+alias redlight="cd ~/projects/ccam_redlight/"
+alias lmd="cd /Users/aev021/projects/lmd_rna-seq/"
+
