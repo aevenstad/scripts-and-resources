@@ -1,0 +1,10 @@
+Useful commands for unix
+
+
+less -S somefile # do not wrap lines
+
+column -t -s '  ' somefile | less  # view as tab delimited table 
+
+
+
+  
