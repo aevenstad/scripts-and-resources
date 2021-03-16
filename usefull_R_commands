@@ -1,0 +1,20 @@
+# Document for useful R-commands
+
+
+gsub:
+
+gsub("_.*", "", x) # Remove characters from _ to end of string x
+
+gsub(".{5}$", "", x) # Remove last five characters of string x
+
+gsub("\\.suffix$", "", x) # Remove ".suffix" from string
+
+gsub("^prefix.", "", x) # Remove "prefix." from string
+
+
+
+
+Data frames:
+
+x = x[c(rep(FALSE,1), TRUE)] # extract every other column
+
