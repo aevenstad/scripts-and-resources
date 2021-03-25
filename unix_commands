@@ -7,5 +7,11 @@ column -t -s '  ' somefile | less  # view as tab delimited table
 wc -m # count characters in string
 
 
+### FASTA ###
 
-  
+# Convert multiline fasta to single line
+awk '!/^>/ { printf "%s", $0; n = "\n" } /^>/ { print n $0; n = "" } END { printf "%s", n }' sample1.fa > sample1_singleline.fa
+
+# Get the length of a fasta sequence (must be single line)
+cat sample1_singleline.fa | awk 'NR%2==0' | awk '{print length($1)}'
+
