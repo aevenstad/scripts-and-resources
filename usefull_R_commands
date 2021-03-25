@@ -11,7 +11,7 @@ gsub("\\.suffix$", "", x) # Remove ".suffix" from string
 
 gsub("^prefix.", "", x) # Remove "prefix." from string
 
-
+gsub("\\.[0-9]+","", x) # Remove any integer after . 
 
 
 Data frames:
