@@ -18,3 +18,5 @@ awk '!/^>/ { printf "%s", $0; n = "\n" } /^>/ { print n $0; n = "" } END { print
 # Get the length of a fasta sequence (must be single line)
 cat sample1_singleline.fa | awk 'NR%2==0' | awk '{print length($1)}'
 
+# Calculate sequence lengths using bioawk
+bioawk -c fastx '{print $name, length($seq)}' input.fasta 
