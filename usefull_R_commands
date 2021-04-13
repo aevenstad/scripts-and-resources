@@ -18,6 +18,11 @@ Data frames:
 
 x = x[c(rep(FALSE,1), TRUE)] # extract every other column
 
+colnames(df)[1-n] = paste(colnames(df)[1-n], "suffix") # add suffix to specific column names
+
+
+
+
 # dplyr:
 
 x = slice(x, 1:(n() - 5)) # remove bottom 5 rows from data frame
