@@ -19,5 +19,12 @@ Data frames:
 x = x[c(rep(FALSE,1), TRUE)] # extract every other column
 
 # dplyr:
+
 x = slice(x, 1:(n() - 5)) # remove bottom 5 rows from data frame
+
+relocate(x, col1, col2, col3, .after = col4) # relocate columns in a dataframe (in data frame x, move columns 1-3 to after column 4). 
+relocate(x, col1, col2, col3, .before = col4) # move columns 1-3 to before column 4
+
+# Create new column based on if conditions in other columns are met:
+data.frame$new_col = if_else(data.frame$column_x = 'some.value' & data.frame$column_y = 'some.value', "yes", "no", "missing") # & = and, | = or
 
