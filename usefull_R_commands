@@ -20,7 +20,7 @@ x = x[c(rep(FALSE,1), TRUE)] # extract every other column
 
 colnames(df)[1-n] = paste(colnames(df)[1-n], "suffix") # add suffix to specific column names
 
-
+subset( table1, column_table1 %in% column_table2) # subset column of table1 based on values in column of table2  
 
 
 # dplyr:
