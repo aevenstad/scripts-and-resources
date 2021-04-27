@@ -17,6 +17,9 @@ sed 's/\.[0-9]//g' # Remove isoform information from gene identifier (Cc047653.1
 
 grep -E 'pattern[[:alnum:]]' file.txt # extract lines mathcing pattern with different alphanumeric character as last character
 
+grep -wFf file1 file2  # grep with file and only print lines with the exact match (useful for transcript/gene ids to only extract the specific ids and not strings that contain the pattern)
+
+grep 'pattern[ABC]' file1 # grep lines that matches the string patternA, patternB and patternC
 
 
 ### FASTA ###
