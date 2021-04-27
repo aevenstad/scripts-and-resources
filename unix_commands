@@ -1,12 +1,21 @@
 Useful commands for unix
 
+
+## less ##
 less -S somefile # do not wrap lines
 
+## column ##
 column -t -s '  ' somefile | less  # view as tab delimited table 
 
+## word count ##
 wc -m # count characters in string
 
+## sed ##
 sed 's/\.[0-9]//g' # Remove isoform information from gene identifier (Cc047653.1 -> Cc047653)
+
+## grep ##
+
+grep -E 'pattern[[:alnum:]]' file.txt # extract lines mathcing pattern with different alphanumeric character as last character
 
 
 
