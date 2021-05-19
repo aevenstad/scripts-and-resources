@@ -13,7 +13,13 @@ wc -m # count characters in string
 ## sed ##
 sed 's/\.[0-9]//g' # Remove isoform information from gene identifier (Cc047653.1 -> Cc047653)
 
+sed -i s/^/string/ file # add string to start of every line in file
+
+sed -i s/$/string/ file # add string to end of every line in file
+
 ## grep ##
+
+grep '\<string\>' file # extract lines matching exact string
 
 grep -E 'pattern[[:alnum:]]' file.txt # extract lines mathcing pattern with different alphanumeric character as last character
 
