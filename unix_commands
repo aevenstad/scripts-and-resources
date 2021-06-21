@@ -10,6 +10,9 @@ column -t -s '  ' somefile | less  # view as tab delimited table
 ## word count ##
 wc -m # count characters in string
 
+## Find ##
+find /dir_to_search/*pattern* -type f ! -size 0 # Find non empty files matching pattern in directory
+
 ## sed ##
 sed 's/\.[0-9]//g' # Remove isoform information from gene identifier (Cc047653.1 -> Cc047653)
 
