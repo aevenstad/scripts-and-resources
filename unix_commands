@@ -10,6 +10,9 @@ column -t -s '  ' somefile | less  # view as tab delimited table
 ## word count ##
 wc -m # count characters in string
 
+## awk ##
+awk -F: '$3>1000 inputfile # extract specific values from file
+
 ## Find ##
 find /dir_to_search/*pattern* -type f ! -size 0 # Find non empty files matching pattern in directory
 
