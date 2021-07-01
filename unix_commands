@@ -10,9 +10,9 @@ column -t -s '  ' somefile | less  # view as tab delimited table
 ## word count ##
 wc -m # count characters in string
 
-## dirname & filename #
+## dirname & basename #
 dirname $VARIABLE # outputs path to file(can be useful for bash variables where $file is in different directories: DIR=(dirname $file))
-filename $VARIABLE
+basename $VARIABLE
 
 
 ## awk ##
