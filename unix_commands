@@ -18,6 +18,8 @@ basename $VARIABLE
 ## awk ##
 awk -F: '$3>1000 inputfile # extract specific values from file
 
+
+
 ## Find ##
 find /dir_to_search/*pattern* -type f ! -size 0 # Find non empty files matching pattern in directory
 
@@ -52,3 +54,6 @@ tr "\t" "\n" < linearized.fa | fold -w 60 > multiline.fasta
 
 # Calculate sequence lengths using bioawk
 bioawk -c fastx '{print $name, length($seq)}' input.fasta 
+
+# subset fasta by length (all seqs shorter than 300nt in new file)
+bioawk -c fastx '{ if(length($seq) < 300) { print ">"$name; print $seq }}' in.fasta > out.fasta 
