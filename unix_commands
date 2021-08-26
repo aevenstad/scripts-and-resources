@@ -57,3 +57,12 @@ bioawk -c fastx '{print $name, length($seq)}' input.fasta
 
 # subset fasta by length (all seqs shorter than 300nt in new file)
 bioawk -c fastx '{ if(length($seq) < 300) { print ">"$name; print $seq }}' in.fasta > out.fasta 
+
+
+### PERL ###
+
+export PERL5LIB=/path/to/lib # add directory with perl module to @INC
+
+
+
+
