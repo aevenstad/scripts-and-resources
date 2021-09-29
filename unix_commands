@@ -40,6 +40,8 @@ grep -wFf file1 file2  # grep with file and only print lines with the exact matc
 
 grep 'pattern[ABC]' file1 # grep lines that matches the string patternA, patternB and patternC
 
+grep -oh "\w*th\w*" file # find and print any word containing the string 'th', can remove the first '\w*' to only print words starting with 'th'
+
 
 ### FASTA ###
 
