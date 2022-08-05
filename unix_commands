@@ -53,6 +53,8 @@ sed -i s/$/string/ file # add string to end of every line in file
 
 sed '/*pattern*/s/old_string/new_string/g' # replace string/character only on lines that match a pattern
 
+sed 's/\.[^.]*$//g' file # Remove characters after last dot
+
 ## grep ##
 
 grep '\<string\>' file # extract lines matching exact string
