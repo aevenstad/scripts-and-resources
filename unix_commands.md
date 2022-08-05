@@ -24,35 +24,35 @@ awk '/^>/ {$3 = $3 -($4-1)}1' FS='_' OFS='_' c_eur_iso.fa | awk '/^>/ {$3=sprint
 
 `awk '{t[$1]?t[$1]=t[$1]","$2:t[$1]=$2}END{for (i in t){print i,t[i]}}' infile`
 
-turns
-in_file:
-id1 1
-id1 2
-id2 1
-id2 2
-to
-out_file:
-id1 1,2
-id2 1,2
-
+turns  
+in_file:  
+id1 1  
+id1 2  
+id2 1  
+id2 2  
+to  
+out_file:  
+id1 1,2  
+id2 1,2  
+  
 `awk '{$4=$4"_"++a[$4]}1' file` # add string and number (starting from 1) to duplicated "cells" in column $4: turns gene1 into gene1_1 & gene_1_2 etc.
 
 
 
 ## Find ##
 `find /dir_to_search/*pattern* -type f ! -size 0` # Find non empty files matching pattern in directory
-
+  
 ## sed
 `sed 's/\.[0-9]//g'` # Remove isoform information from gene identifier (Cc047653.1 -> Cc047653)
-
+  
 `sed -i s/^/string/ file` # add string to start of every line in file
-
+  
 `sed -i s/$/string/ file` # add string to end of every line in file
-
+  
 `sed '/*pattern*/s/old_string/new_string/g'` # replace string/character only on lines that match a pattern
-
+  
 `sed 's/\.[^.]*$//g' file` # Remove characters after last dot
-
+  
 ## grep
 
 `grep '\<string\>' file` # extract lines matching exact string
@@ -68,19 +68,19 @@ id2 1,2
 
 ## FASTA
 
-\# Convert multiline fasta to single line
+\# Convert multiline fasta to single line  
 `awk '!/^>/ { printf "%s", $0; n = "\n" } /^>/ { print n $0; n = "" } END { printf "%s", n }' sample1.fa > sample1_singleline.fa`
 
-\# Get the length of a fasta sequence (must be single line)
+\# Get the length of a fasta sequence (must be single line)  
 `cat sample1_singleline.fa | awk 'NR%2==0' | awk '{print length($1)}'`
 
-\# Format back to multiline FASTA. Header needs to be shorter than 60 characters (or increase fold value)
+\# Format back to multiline FASTA. Header needs to be shorter than 60 characters (or increase fold value)  
 `tr "\t" "\n" < linearized.fa | fold -w 60 > multiline.fasta` 
 
-\# Calculate sequence lengths using bioawk
+\# Calculate sequence lengths using bioawk  
 `bioawk -c fastx '{print $name, length($seq)}' input.fast `
 
-\# subset fasta by length (all seqs shorter than 300nt in new file)
+\# subset fasta by length (all seqs shorter than 300nt in new file)  
 `bioawk -c fastx '{ if(length($seq) < 300) { print ">"$name; print $seq }}' in.fasta > out.fasta` 
 
 
