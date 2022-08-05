@@ -31,6 +31,7 @@ in_file:
 | ID1 | 2 |
 | ID2 | 1 |
 | ID2 | 2 |
+  
 to  
 out_file:  
 | ID1 | 1 | 2  |
