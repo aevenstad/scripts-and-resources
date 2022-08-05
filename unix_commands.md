@@ -86,7 +86,7 @@ id2 1,2
 
 ### PERL
 
-`export PERL5LIB=/path/to/lib # add directory with perl module to @INC
+`export PERL5LIB=/path/to/lib` # add directory with perl module to @INC
 
 
 
