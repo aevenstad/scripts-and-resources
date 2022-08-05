@@ -16,7 +16,7 @@ Useful commands for unix
 ## awk
 `awk -F: '$3>1000 inputfile` # extract specific values from file
 
-awk '/^>/ {$3 = $3 -($4-1)}1' FS='_' OFS='_' c_eur_iso.fa | awk '/^>/ {$3=sprintf("%05d", $3)}1' FS='_' OFS='_' `
+`awk '/^>/ {$3 = $3 -($4-1)}1' FS='_' OFS='_' c_eur_iso.fa | awk '/^>/ {$3=sprintf("%05d", $3)}1' FS='_' OFS='_' `
 
 `awk '{$(NF+1)="666"}1'` # Insert new column witouth header, every row assigned the same value 666
 
