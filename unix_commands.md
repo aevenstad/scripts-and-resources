@@ -26,16 +26,19 @@ Useful commands for unix
 
 turns  
 in_file:  
-| ID1 | 1 |
+|  |  |
 |---|---|
+| ID1 | 1 |
 | ID1 | 2 |
 | ID2 | 1 |
 | ID2 | 2 |
   
 to  
 out_file:  
-| ID1 | 1 | 2  |
-| ID2 | 1 | 2  |
+|  |  |
+|---|---|
+| ID1 | 1 | 2 |
+| ID2 | 1 | 2 |
 
   
 `awk '{$4=$4"_"++a[$4]}1' file` # add string and number (starting from 1) to duplicated "cells" in column $4: turns gene1 into gene1_1 & gene_1_2 etc.
