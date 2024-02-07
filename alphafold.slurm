@@ -10,6 +10,7 @@
 #SBATCH --cpus-per-task=12
 #SBATCH --output=%x.%j.out
 
+# Script to run Alphafold2 monomer structure prediction on Saga
 
 # Runtime for a ~600aa protein sequence with the slurm settings above was ~ 1.5 hours
 # CPU Efficiency: 15.82%
